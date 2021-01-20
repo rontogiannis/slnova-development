@@ -11,23 +11,23 @@ curl https://bootstrap.pypa.io/get-pip.py --output get-pip.py
 sudo python get-pip.py
 sudo apt install mysql-server
 sudo mysql_secure_installation
-echo MySQL will start now. Create a database using CREATE DATABASE my_database_name\; then quit MySQL to continue the setup. && read -n 1 -s -r -p "[Press any key to continue]"
+echo 'MySQL will start now. Create a database using CREATE DATABASE my_database_name; then quit MySQL to continue the setup' && read -n 1 -s -r -p "[Press any key to continue]"
 sudo mysql
 sudo apt install default-libmysqlclient-dev
 sudo apt install python-dev
 sudo apt install libjpeg-dev
 sudo wget https://raw.githubusercontent.com/paulfitz/mysql-connector-c/master/include/my_config.h -P /usr/include/mysql/ 
-pip install -r ~/shared/WLSite/src/WLSite/requirements.txt
-cd ~/shared/WLSite/src
+pip install -r $HOME/shared/WLSite/src/WLSite/requirements.txt
+cd $HOME/shared/WLSite/src
 find . -maxdepth 1 -type d \( ! -name . \) -exec bash -c "cd '{}' && sudo python setup.py install" \;
-cd ~
-sudo mv ~/shared/WLSite/src/WLSite/settings-template.py ~/shared/WLSite/src/WLSite/settings.py
-echo Edit ~/shared/WLSite/src/WLSite/settings.py as specified in the Google doc && read -n 1 -s -r -p "[Press any key to continue]"
+cd $HOME
+sudo mv $HOME/shared/WLSite/src/WLSite/settings-template.py $HOME/shared/WLSite/src/WLSite/settings.py
+echo 'Edit '$HOME'/shared/WLSite/src/WLSite/settings.py as specified in the Google doc' && read -n 1 -s -r -p "[Press any key to continue]"
 sudo apt install nodejs
 sudo apt install node-typescript
 sudo apt install npm
 sudo npm install -g typescript
 sudo npm install -g tslint typescript
-python ~/shared/WLSite/src/WLSite/manage.py syncdb
-python ~/shared/WLSite/src/WLSite/manage.py migrate
-python ~/shared/WLSite/src/WLSite/manage.py runserver
+python $HOME/shared/WLSite/src/WLSite/manage.py syncdb
+python $HOME/shared/WLSite/src/WLSite/manage.py migrate
+python $HOME/shared/WLSite/src/WLSite/manage.py runserver
