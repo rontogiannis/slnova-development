@@ -17,17 +17,17 @@ sudo apt install default-libmysqlclient-dev
 sudo apt install python-dev
 sudo apt install libjpeg-dev
 sudo wget https://raw.githubusercontent.com/paulfitz/mysql-connector-c/master/include/my_config.h -P /usr/include/mysql/ 
-pip install -r $HOME/shared/WLSite/src/WLSite/requirements.txt
-cd $HOME/shared/WLSite/src
+pip install -r /home/$1/shared/WLSite/src/WLSite/requirements.txt
+cd /home/$1/shared/WLSite/src
 find . -maxdepth 1 -type d \( ! -name . \) -exec bash -c "cd '{}' && sudo python setup.py install" \;
-cd $HOME
-sudo mv $HOME/shared/WLSite/src/WLSite/settings-template.py $HOME/shared/WLSite/src/WLSite/settings.py
-echo 'Edit '$HOME'/shared/WLSite/src/WLSite/settings.py as specified in the Google doc' && read -n 1 -s -r -p "[Press any key to continue]"
+cd /home/$1
+sudo mv /home/$1/shared/WLSite/src/WLSite/settings-template.py /home/$1/shared/WLSite/src/WLSite/settings.py
+echo 'Edit /home/'$1'/shared/WLSite/src/WLSite/settings.py as specified in the Google doc' && read -n 1 -s -r -p "[Press any key to continue]"
 sudo apt install nodejs
 sudo apt install node-typescript
 sudo apt install npm
 sudo npm install -g typescript
 sudo npm install -g tslint typescript
-python $HOME/shared/WLSite/src/WLSite/manage.py syncdb
-python $HOME/shared/WLSite/src/WLSite/manage.py migrate
-python $HOME/shared/WLSite/src/WLSite/manage.py runserver
+python /home/$1/shared/WLSite/src/WLSite/manage.py syncdb
+python /home/$1/shared/WLSite/src/WLSite/manage.py migrate
+python /home/$1/shared/WLSite/src/WLSite/manage.py runserver
