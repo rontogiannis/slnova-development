@@ -1,7 +1,7 @@
 #!/bin/sh
 sudo add-apt-repository universe
 sudo apt update 
-sudo apt install build-essentials
+sudo apt install build-essential
 sudo apt install python2
 sudo update-alternatives --install /usr/bin/python python /usr/bin/python2 1
 sudo update-alternatives --install /usr/bin/python python /usr/bin/python3 2
