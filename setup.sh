@@ -7,7 +7,7 @@ sudo update-alternatives --install /usr/bin/python python /usr/bin/python2 1
 sudo update-alternatives --install /usr/bin/python python /usr/bin/python3 2
 sudo update-alternatives --config python
 sudo apt install curl
-curl https://bootstrap.pypa.io/get-pip.py --output get-pip.py
+curl https://bootstrap.pypa.io/2.7/get-pip.py --output get-pip.py
 sudo python get-pip.py
 sudo apt install mysql-server
 sudo mysql_secure_installation
