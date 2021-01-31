@@ -1,9 +1,9 @@
 #!/bin/sh
-git clone https://aronto@bitbucket.org/weblogo-dev/wlsite.git
-git clone https://aronto@bitbucket.org/weblogo-dev/weblogo.git
-git clone https://aronto@bitbucket.org/weblogo-dev/weblogo_threejs.git
-git clone https://aronto@bitbucket.org/weblogo-dev/wlwidgets.git
-git clone https://aronto@bitbucket.org/scriptblocks/scriptblocks.git
+git clone https://$1@bitbucket.org/weblogo-dev/wlsite.git
+git clone https://$1@bitbucket.org/weblogo-dev/weblogo.git
+git clone https://$1@bitbucket.org/weblogo-dev/weblogo_threejs.git
+git clone https://$1@bitbucket.org/weblogo-dev/wlwidgets.git
+git clone https://$1@bitbucket.org/scriptblocks/scriptblocks.git
 
 cd weblogo && git checkout oliver-glow && cd ..
 cd wlsite && git checkout sail-ctm && cd ..
